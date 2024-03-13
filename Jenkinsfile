@@ -19,16 +19,7 @@ pipeline {
               echo "unit tests"
               echo "integration tests"
           }
-            post {
-              
-              success {
-                  emailext  subject: 'Unit Test Status - Success', 
-                            body: 'Unit Test has been completed successfully.', 
-                            to: "bhullarekam04@gmail.com",
-                            attachLog: true
-              }
-
-      }
+           
     }
       stage('Code Quality Check') {
           steps {
@@ -44,7 +35,19 @@ pipeline {
           steps {
               echo "deploy the application to a testing environment specified by the ${env.TESTING_ENVIRONMENT}"
           }
-           post {
+          
+    }
+      stage('Approval') {
+          steps {
+              sleep time: 10, unit: 'SECONDS'
+          }
+      }
+    stage('Deployment'){
+      steps{
+        echo "Deployment done"
+        
+      }
+       post {
               
               success {
                   emailext  subject: 'Deploy', 
@@ -54,11 +57,6 @@ pipeline {
               }
       }
     }
-      stage('Approval') {
-          steps {
-              sleep time: 10, unit: 'SECONDS'
-          }
-      }
        
     
   }
