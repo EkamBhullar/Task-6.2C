@@ -44,7 +44,7 @@ pipeline {
       }
     stage('Deployment'){
       steps{
-        echo "Deployment done !!!!!!!"
+        echo "Deployment done !!"
         
       }
        post {
