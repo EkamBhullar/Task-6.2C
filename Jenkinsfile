@@ -66,6 +66,7 @@ pipeline {
       stage('Integration tests on Staging') {
           steps {
               echo "Ran Integration Tests using Apache Camel tool"
+              echo "Updated code"
           }
       }
     stage('Deploy to Production'){
