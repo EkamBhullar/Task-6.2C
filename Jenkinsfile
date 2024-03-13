@@ -54,11 +54,7 @@ pipeline {
               sleep time: 10, unit: 'SECONDS'
           }
       }
-       stage('Approval updated') {
-          steps {
-              sleep time: 10, unit: 'SECONDS'
-          }
-      }
+       
     
   }
 }
