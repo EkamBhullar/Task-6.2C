@@ -35,6 +35,11 @@ pipeline {
               echo "check the quality of the code"
           }
       }
+     stage('Code Analysis') {
+          steps {
+              echo "check thedfdse"
+          }
+      }
       stage('Deploy') {
           steps {
               echo "deploy the application to a testing environment specified by the ${env.TESTING_ENVIRONMENT}"
